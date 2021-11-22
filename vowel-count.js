@@ -12,12 +12,16 @@
 
 function vowelCount(str) {
   let totalVowel = 0;
-
-  return 2;
+  let vowels = 'aeiou';
+  for(let i = 0; i<str.length;i++){
+    if(vowels.indexOf(str[i].toLowerCase())> -1){
+      totalVowel++;
+  }
+  }
+  return `${totalVowel}`;
 }
 
-console.log(vowelCount('makan')) // 2 
-
+console.log(vowelCount('makan)) // 2 
 module.exports = {
   vowelCount,
 }

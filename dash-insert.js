@@ -17,15 +17,32 @@
 
 function dashInsert(str) {
  // write your magic here!
- console.log(str)
- return str
+// declare variabel
+let prev = '',
+    newStr = '';
+    str = str.toString();
+
+// looping with For
+
+for (let i = 0; i < str.length;i++){
+  parseInt(str[i])%2 == 0 ? current = 'even' : current ='odd';
+  	if (current=='odd' && prev=='odd'){
+			newStr=newStr + '-' + str[i];
+			prev='odd';
+		} else {
+			newStr=newStr + str[i];
+		 	prev=current;
+		}
 }
 
+ return newStr
+}
 
 console.log(dashInsert('450093')) // 45009-3
-// console.log(dashInsert('554297')) // 5-5429-7
-
+console.log(dashInsert('554297')) // 5-5429-7
 
 module.exports = {
   dashInsert,
 };
+
+
